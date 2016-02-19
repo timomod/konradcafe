@@ -522,6 +522,22 @@ h3 > .fa {
 }
 
 /* ---------------------------------------------- /*
+     * Background image
+/* ---------------------------------------------- */
+
+ .top-bg{
+    background: image-url('bg5.jpg') no-repeat;
+    position:relative;
+    background-repeat: no-repeat;
+    // positions background image when view window is reduced
+    // e.g 20% 80% = mostly left side that remains visible
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+/* ---------------------------------------------- /*
  * Intro
 /* ---------------------------------------------- */
 
@@ -770,7 +786,7 @@ h3 > .fa {
 }
 
 #status, .status-mes {
-	background-image: url(../images/488.GIF);
+	background-image: image-url("488.GIF");
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 200px;
