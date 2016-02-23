@@ -34,7 +34,7 @@
 		 * Background image
 		/* ---------------------------------------------- */
 
-		$('#intro').backstretch(['assets/images/bg4.jpg']);
+		// $('#intro').backstretch(['assets/images/bg4.jpg']);
 
 		/* ---------------------------------------------- /*
 		 * Navbar
@@ -42,13 +42,21 @@
 
 		var navbar = $('.navbar');
 		var navHeight = navbar.height();
+    var logoWhite = $('.logo_white');
+    var logoBlack = $('.logo_black');
+
 
 		$(window).scroll(function() {
 			if($(this).scrollTop() >= navHeight) {
 				navbar.addClass('navbar-color');
+        logoWhite.hide();
+        logoBlack.show();
+
 			}
 			else {
 				navbar.removeClass('navbar-color');
+        logoWhite.show();
+        logoBlack.hide();
 			}
 		});
 

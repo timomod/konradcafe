@@ -447,6 +447,28 @@ h3 > .fa {
  * Navigation
 /* ---------------------------------------------- */
 
+/* Added by Timo */
+.navlogo {
+  max-width: 100%;
+  height: auto;
+}
+
+.navlogo2 {
+  max-width: 80%;
+  height: auto;
+  padding-top:10px;
+}
+
+.logo_white {
+
+}
+.logo_black {
+  display: none;
+
+}
+
+
+
 .navbar {
 	background: none;
 	border-radius: 0;
@@ -468,11 +490,7 @@ h3 > .fa {
 	font: 700 18px/1.2 'Montserrat', serif, sans-serif;
 	color: #FFF;
 }
-/* Adde by Timo */
-.navbar-header a {
 
-  border-bottom: 3px solid #fff;
-}
 
 .navbar-custom .navbar-nav > li.active {
 	border-bottom: 3px solid #FFF;

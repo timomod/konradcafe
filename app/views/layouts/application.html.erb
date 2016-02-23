@@ -35,15 +35,22 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">KONRAD &nbsp; &nbsp; &nbsp;</a>
+          <!-- Logo images below are shown and hidden on scroll  -->
+          <!-- White Logo -->
+          <div class="col-md-3 logo_white">
+            <%= image_tag "konrad_logo.png", {class: "navlogo"}%>
+         </div>
+         <!-- Black logo -->
+          <div class="col-md-3 logo_black">
+           <%= image_tag "konrad_logo2.png", {class: "navlogo2"}%>
+         </div>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#coffee">Menu</a></li>
-            <li><a href="#concerts">Concerts</a></li>
-            <li><a href="#comedy">Comedy</a></li>
+            <li><a href="#coffee">Events</a></li>
+            <li><a href="#concerts">Eat & Drink</a></li>
             <li><a href="#gallery">Image Gallery</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
