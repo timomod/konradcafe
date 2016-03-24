@@ -1,7 +1,21 @@
 Rails.application.routes.draw do
+
   root 'events#index'
 
-   resources :events
+
+  get 'events/admin' => 'events#admin'
+
+  get 'eats/admin' => 'eats#admin'
+
+
+
+
+  resources :events
+
+  resources :eats
+
+
+
 
 
 

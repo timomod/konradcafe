@@ -1,0 +1,25 @@
+<section class="section">
+
+   <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-12">
+
+            <h1>EDIT Event</h1>
+            <p>This is a new events page</p>
+
+            <%= simple_form_for(@event) do |f| %>
+              <%= f.error_notification %>
+
+              <%= f.input :title %>
+              <%= f.input :subtitle %>
+              <%= f.input :body %>
+
+              <%= f.button :submit %>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+</sectionn>
