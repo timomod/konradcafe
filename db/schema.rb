@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160322094712) do
+ActiveRecord::Schema.define(version: 20161021214727) do
+
+  create_table "covers", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.string   "subtitle2"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "curries", force: :cascade do |t|
+    t.string   "weekday"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "eats", force: :cascade do |t|
     t.string   "header"
@@ -27,8 +43,21 @@ ActiveRecord::Schema.define(version: 20160322094712) do
     t.string   "title"
     t.string   "subtitle"
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "publish"
+    t.string   "calendar_title"
+    t.string   "calendar_body"
+    t.string   "day"
+    t.string   "month"
+    t.string   "year"
+    t.string   "start"
+    t.string   "end"
+    t.string   "address_one"
+    t.string   "address_two"
+    t.string   "postcode"
+    t.string   "city"
+    t.string   "weekday"
   end
 
   create_table "homes", force: :cascade do |t|

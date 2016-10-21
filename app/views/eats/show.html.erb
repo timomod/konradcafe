@@ -1,0 +1,30 @@
+<section class="section">
+
+   <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-12 headline">
+            <i class="fa fa-pencil"></i> <%=link_to "Edit", edit_eat_path, 'data-no-turbolink' => true  %>
+             <hr>
+
+            <h2><%=  @eat.header %></h2>
+            <p><%=  @eat.subheader %></p>
+          </div>
+
+          <div class="col-md-3 col-sm-6 hidden-xs wow ">
+            <%= image_tag "foodie500_01.jpg", {class: "avatar"}%>
+          </div>
+
+          <div class="col-md-3 col-sm-6 hidden-xs wow ">
+             <%= image_tag "foodie500_02.jpg", {class: "avatar"}%>
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+            <h3><%=  @eat.title %></h3>
+            <h4><%=  @eat.subtitle %></h4>
+            <p><%=   @eat.body %></p>
+          </div>
+        </div>
+      </div>
+</section>

@@ -30,5 +30,5 @@
 //= require wow
 
 
-//= require turbolinks
+
 //= require_tree .

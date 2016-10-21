@@ -1,0 +1,35 @@
+<div class="col-md-10 col-md-offset-1">
+
+            <%= simple_form_for(@event) do |f| %>
+              <%= f.error_notification %>
+
+              <%= f.input :publish, :collection => ['Not Published','Published','Archive'] %>
+              <%= f.input :title %>
+              <%= f.input :subtitle %>
+              <%= f.input :body %>
+          </div>
+          <div class="col-md-5 col-md-offset-1">
+            <h3>Calendar Info</h3>
+            <p>(Note: Data will also be used for the Date and Time in headers)</p>
+
+              <%= f.input :weekday, :collection => ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'] %>
+              <%= f.input :day, :collection => 01..31 %>
+              <%= f.input :month, :collection => 1..12 %>
+              <%= f.input :year,:collection => 2016..2030 %>
+              <%= f.input :start, placeholder: 'Use format: 00:00' %>
+              <%= f.input :end, placeholder: 'Use format: 00:00' %>
+              <%= f.input :address_one, label: 'Venue'%>
+              <%= f.input :address_two, label: 'Street' %>
+              <%= f.input :postcode %>
+              <%= f.input :city %>
+          </div>
+          <div class="col-md-5">
+            <h3>Image Upload</h3>
+            xxx
+          </div>
+          <div class="col-md-12">
+
+              <%= f.button :submit %>
+            <% end %>
+
+          </div>

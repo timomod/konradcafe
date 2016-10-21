@@ -8,6 +8,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all.order("created_at DESC")
     @eats = Eat.last
+    @covers = Cover.last
   end
 
    def admin
@@ -55,7 +56,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :subtitle, :body)
+    params.require(:event).permit(:title, :subtitle, :body, :weekday, :day, :month, :year, :publish, :start, :end)
   end
 
 end

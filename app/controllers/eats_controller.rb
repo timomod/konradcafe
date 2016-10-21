@@ -8,7 +8,7 @@ layout "cms", only: [:admin, :new, :create, :show, :edit, :update, :destroy]
 
 
    def admin
-      @eats = Eat.all.order("created_at DESC")
+      @eats = Eat.all
   end
 
   def new

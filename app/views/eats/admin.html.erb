@@ -1,2 +1,46 @@
-<h1>Eats#admin</h1>
-<p>Find me in app/views/eats/edit.html.erb</p>
+<section class="section">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-12 long-down">
+        <h3>Eat and Drink page</h3>
+        <%= link_to edit_eat_path(@eats.last) , class: "btn-treehouse btn-md" do %>
+        <i class="fa fa-pencil"> Edit the content below </i>
+        <%end%>
+      </div>
+    </div><!-- row -->
+
+
+
+
+
+        <div class="row">
+
+          <div class="col-md-12 headline">
+
+            <hr>
+            <% eat = @eats.last%>
+            <h2><%= eat.header %></h2>
+            <p><%=  eat.subheader %></p>
+          </div>
+
+          <div class="col-md-3 col-sm-6 hidden-xs wow ">
+            <%= image_tag "foodie500_01.jpg", {class: "avatar"}%>
+          </div>
+
+          <div class="col-md-3 col-sm-6 hidden-xs wow ">
+             <%= image_tag "foodie500_02.jpg", {class: "avatar"}%>
+          </div>
+
+          <div class="col-md-6 col-sm-12">
+            <h3><%=  eat.title %></h3>
+            <h4><%=  eat.subtitle %></h4>
+            <p><%=   eat.body %></p>
+          </div>
+        </div><!-- row-->
+
+
+  </div><!-- container-->
+</section>
+

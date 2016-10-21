@@ -4,22 +4,14 @@
 
         <div class="row">
 
-          <div class="col-md-12">
-
-            <h1>NEW Event</h1>
-            <p>This is a new events page</p>
-
-            <%= simple_form_for(@event) do |f| %>
-              <%= f.error_notification %>
-
-              <%= f.input :title %>
-              <%= f.input :subtitle %>
-              <%= f.input :body %>
-
-              <%= f.button :submit %>
-            <% end %>
-
+          <div class="col-md-10 col-md-offset-1">
+            <%= link_to "<< Back to Events", events_admin_path %>
+            <h2>NEW Event</h2>
+            <p>Create a new event.</p>
           </div>
+
+          <%= render "form" %>
+
         </div>
       </div>
 </sectionn>
