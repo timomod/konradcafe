@@ -9,6 +9,7 @@ class EventsController < ApplicationController
     @events = Event.all.order("created_at DESC")
     @eats = Eat.last
     @covers = Cover.last
+    @curry = Curry.find(1)
   end
 
    def admin

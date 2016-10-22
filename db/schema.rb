@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161021214727) do
+ActiveRecord::Schema.define(version: 20161022224454) do
 
   create_table "covers", force: :cascade do |t|
     t.string   "title"
@@ -23,10 +23,21 @@ ActiveRecord::Schema.define(version: 20161021214727) do
   end
 
   create_table "curries", force: :cascade do |t|
-    t.string   "weekday"
     t.string   "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "title"
+    t.string   "monday"
+    t.string   "tuesday"
+    t.string   "wednesday"
+    t.string   "thursday"
+    t.string   "friday"
+    t.string   "curry1"
+    t.string   "curry2"
+    t.string   "curry3"
+    t.string   "curry4"
+    t.string   "curry5"
+    t.string   "date"
   end
 
   create_table "eats", force: :cascade do |t|

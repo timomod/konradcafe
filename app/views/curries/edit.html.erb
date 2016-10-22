@@ -1,0 +1,35 @@
+<section class="section">
+
+   <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-10 col-md-offset-1">
+            <%= link_to "<< Back to Curries", curries_admin_path %>
+            <h2>Thai Curries of the Week</h2>
+            <p>Edit the Thai Curries of the Week.</p>
+          </div>
+
+          <%= simple_form_for(@curry) do |f| %>
+            <%= f.error_notification %>
+
+            <%= f.input :title %>
+            <%= f.input :date %>
+            <%= f.input :description %>
+
+            <%= f.input :curry1, label: "Monday" %>
+
+            <%= f.input :curry2, label: "Tuesday" %>
+
+            <%= f.input :curry3, label: "Wednesday" %>
+
+            <%= f.input :curry4, label: "Thursday" %>
+
+            <%= f.input :curry5, label: "Friday" %>
+
+            <%= f.button :submit %>
+          <% end %>
+
+        </div>
+      </div>
+</sectionn>

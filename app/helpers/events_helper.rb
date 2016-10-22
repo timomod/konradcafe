@@ -11,7 +11,10 @@ module EventsHelper
 
   # Checks if current day matches the weekday in the curry menu calendar
   def weekday_check(day)
-    Date.today.strftime("%A").downcase == day.downcase
+    if
+      Date.today.strftime("%A").downcase == day.downcase
+      "bg-red-text-white"
+    end
   end
 
   # Codence Event-model date info into one string
@@ -22,6 +25,10 @@ module EventsHelper
   def weekday_through_time(event)
     "#{event.weekday} #{event.day}.#{event.month}.#{event.year}, #{event.start} - #{event.end}"
   end
+
+
+
+
 
 
 
