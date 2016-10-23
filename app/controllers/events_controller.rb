@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  layout "cms", only: [:admin, :new, :create, :show, :edit, :update, :destroy]
+  layout "devise", only: [:admin, :new, :create, :show, :edit, :update, :destroy]
 
   before_action :find_event, only: [:show, :edit, :update, :destroy]
 

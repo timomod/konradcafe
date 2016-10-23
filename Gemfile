@@ -36,6 +36,8 @@ gem "autoprefixer-rails"
 
 # Added by Timo - Theme related gems
 gem 'bootstrap-glyphicons', '~> 0.0.1'
+# Added by Timo - devise authentication gem
+gem "devise"
 
 
 

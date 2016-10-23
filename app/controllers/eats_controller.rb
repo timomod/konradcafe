@@ -1,6 +1,6 @@
 class EatsController < ApplicationController
 
-layout "cms", only: [:admin, :new, :create, :show, :edit, :update, :destroy]
+layout "devise", only: [:admin, :new, :create, :show, :edit, :update, :destroy]
 
   before_action :find_eat, only: [:show, :edit, :update, :destroy]
 

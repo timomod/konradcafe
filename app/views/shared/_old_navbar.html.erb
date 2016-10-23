@@ -1,19 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Konradcafe CMS</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-    <!-- Detecting device width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-</head>
-<body>
-
-  <div class="wrapper">  <!-- Wrapper Start-->
-
   <!-- Navigation start     -->
 
    <nav class="navbar navbar-default navbar-fixed-top">
@@ -57,39 +41,6 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+  <p>Hello: <%= current_user.email %></p>
 
   <!-- Navigation End -->
-
-
-
-  <%= yield %>
-
-
-
-  <!-- Footer start -->
-
-    <footer id="footer">
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-md-12">
-            <p class="copy">
-              © 2015 Konrad Cafe & Bar, All Rights Reserved.
-            </p>
-          </div>
-
-        </div><!-- .row -->
-
-      </div><!-- .container -->
-
-    </footer>
-
-    <!-- Footer end -->
-
-</div><!--  .Wrapper end -->
-
-
-</body>
-</html>
