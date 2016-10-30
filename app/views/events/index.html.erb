@@ -141,7 +141,7 @@
           <div class="col-md-8 col-sm-12 wow ">
             <h3><%= @eats.title %></h3>
             <h4><%= @eats.subtitle %></h4>
-            <p><%= @eats.body %></p>
+            <p><%= simple_format(@eats.body) %></p>
 
           </div>
            </div>
@@ -275,7 +275,7 @@
                   <h4><%= weekday_through_time(event) %></h4>
                   <p> <strong><%= event.subtitle %></strong></p>
                   <div class="text">
-                    <p><%= event.body %></p>
+                    <p><%= simple_format(event.body) %></p>
                   </div>
                 </div>
                 <!-- Event Image -->

@@ -1,0 +1,35 @@
+<section class="section">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+
+        <h2>List of users</h2>
+
+        <div>
+
+          <h3>Approved Users</h3>
+          <% @users.each do |user| %>
+              <% if user.approved  %>
+              <div>  <%= user.email %></div>
+
+              <% end %>
+          <% end %>
+
+          <h3>Un-approved Users</h3>
+          <% @users.each do |user| %>
+              <% if (user.approved  == false)  %>
+              <div>  <%= "Email: #{user.email} "%></div>
+              <div><%= "ID: #{user.id}" %></div>
+              <div><%= "Status: #{user.approved}" %><br><br><div>
+
+
+
+              </div>
+              <% end %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

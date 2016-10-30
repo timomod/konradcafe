@@ -1,9 +1,18 @@
 class EventsController < ApplicationController
 
-  layout "devise", only: [:admin, :new, :create, :show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :index
+
+  layout "devise", only: [:admin, :new, :create, :show, :edit, :update, :destroy, :list]
 
   before_action :find_event, only: [:show, :edit, :update, :destroy]
 
+  # def list
+  #   if params[:approved] == "false"
+  #     @users = User.where(approved: false)
+  #   else
+  #     @users = User.all
+  #   end
+  # end
 
   def index
     @events = Event.all.order("created_at DESC")

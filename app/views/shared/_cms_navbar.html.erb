@@ -12,13 +12,20 @@
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
-      <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
-      <% end %>
+      <%= "Signed in as: #{current_user.email}"  %>
+
+      <!-- Text link -->
+       <%= link_to "Home", admin_dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to "Events", events_admin_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to "Eat & Drink", eats_admin_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to "Curries of the Week", edit_curry_path(1), class: "navbar-wagon-item navbar-wagon-link" %>
+
+      <%= link_to "User Admin", admin_index_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
@@ -51,8 +58,7 @@
 
     <% end %>
 
-    <!-- Button (call-to-action) -->
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
