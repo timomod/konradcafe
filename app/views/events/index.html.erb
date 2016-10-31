@@ -6,15 +6,9 @@
       style="background-image:
       linear-gradient(rgba(0,0,0,0.3),
       rgba(0,0,0,0.2)),
-      url('<%= cl_image_path @cover.photo, height: 1200, width: 1600, crop: :fill %>');
+      url('<%= cl_image_path @cover.photo, height: 1200, width: 1600 %>');
       background-color: #222;
       ">
-
-
-
-
-
-
 
 
 
@@ -30,7 +24,7 @@
               <h2><a href="#">Concerts</a></h2>
               <h2><a href="#">Comedy</a></h2>
               <h2><a href="#">Quizzes</a></h2>
-              <h3><a href="#intro"><i class="fa fa-clock-o"> </i><span> Open Today: 11.00 - 01.00</span></a></h3>
+              <h3><a href="#intro"><i class="fa fa-clock-o"> </i><span> <%= opening_times %></span></a></h3>
             </div>
 
 
@@ -41,10 +35,10 @@
           <div class="col-md-4">
 
             <div class="infobox wow ">
-              <h3><%= @events.last.weekday %> <%= @events.last.day %>.<%= @events.last.month %>, <%= @events.last.start %>-<%= @events.last.end%></h3>
+              <h3><%= @cover.weekday %> <%= @cover.day %> <%= square_month(@cover.month.to_i) %>, <%= @cover.start %>-<%= @cover.end%></h3>
 
               <h3>In concert:</h3>
-              <h2><%= @events.last.title %></h2>
+              <h2><%= @cover.title %></h2>
 
 
 
@@ -306,12 +300,12 @@
                 <div class="col-md-7">
                   <div title="Add to Calendar" class="addeventatc">
                     Add to Calendar
-                    <span class="start">30/10/2016 20:00</span>
-                    <span class="end">30/10/2016 22:00</span>
+                    <span class="start"><%= event.day %>/<%= event.month %>/<%= event.year %> <%= event.start %></span>
+                    <span class="end"><%= event.day %>/<%= event.month %>/<%= event.year %> <%= event.end %></span>
                     <span class="timezone">Europe/Luxembourg</span>
-                    <span class="title">Openscreen-Halloween</span>
-                    <span class="description">Scary Movies in Ellergronn Forest</span>
-                    <span class="location">Ellergronn, Esch-sur-Alzette</span>
+                    <span class="title"><%= event.title %></span>
+                    <span class="description"><%= event.subtitle %></span>
+                    <span class="location"><%= event.address_one %></span>
                     <span class="date_format">DD/MM/YYYY</span>
                   </div>
                 </div>
