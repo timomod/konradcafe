@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024013904) do
+ActiveRecord::Schema.define(version: 20161031033637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 20161024013904) do
     t.string   "title"
     t.string   "subtitle"
     t.text     "body"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "publish"
     t.string   "calendar_title"
     t.string   "calendar_body"
@@ -72,7 +72,11 @@ ActiveRecord::Schema.define(version: 20161024013904) do
     t.string   "postcode"
     t.string   "city"
     t.string   "weekday"
+    t.string   "photo"
+    t.boolean  "cover",          default: false, null: false
   end
+
+  add_index "events", ["cover"], name: "index_events_on_cover", using: :btree
 
   create_table "homes", force: :cascade do |t|
     t.string   "title"

@@ -543,6 +543,20 @@ h3 > .fa {
      * Background image
 /* ---------------------------------------------- */
 
+   .cl-image-bg{
+
+    position:relative;
+    background-repeat: no-repeat;
+    // positions background image when view window is reduced
+    // e.g 20% 80% = mostly left side that remains visible
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+
+
  .top-bg{
     background: image-url('bg5.jpg') no-repeat;
     position:relative;

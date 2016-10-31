@@ -1,6 +1,23 @@
 <!-- Intro section start -->
 
-    <section id="intro" class="section top-bg">
+
+
+    <section id="intro" class="section cl-image-bg"
+      style="background-image:
+      linear-gradient(rgba(0,0,0,0.3),
+      rgba(0,0,0,0.2)),
+      url('<%= cl_image_path @cover.photo, height: 1200, width: 1600, crop: :fill %>');
+      background-color: #222;
+      ">
+
+
+
+
+
+
+
+
+
 
       <div class="container">
 
@@ -13,7 +30,7 @@
               <h2><a href="#">Concerts</a></h2>
               <h2><a href="#">Comedy</a></h2>
               <h2><a href="#">Quizzes</a></h2>
-              <h3><a href="#intro"><i class="fa fa-clock-o"> </i><span class="rotatexxxx"> Open Today: 11.00 - 01.00</span></a></h3>
+              <h3><a href="#intro"><i class="fa fa-clock-o"> </i><span> Open Today: 11.00 - 01.00</span></a></h3>
             </div>
 
 
@@ -280,7 +297,8 @@
                 </div>
                 <!-- Event Image -->
                 <div class="col-md-5">
-                  <%= image_tag "p9.jpg", {class: "img-responsive"}%>
+                  <!-- image_tag "p9.jpg", {class: "img-responsive"} -->
+                  <%= cl_image_tag event.photo,  {class: "img-responsive"}  %>
                 </div>
 
 
