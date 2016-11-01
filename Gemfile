@@ -24,8 +24,9 @@ gem 'jquery-rails'
 
 # Image upload gems
 gem 'figaro'
-gem 'cloudinary', '1.1.0'
 gem 'carrierwave'
+gem 'cloudinary', '1.1.0'
+
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
