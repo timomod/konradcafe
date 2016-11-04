@@ -28,6 +28,8 @@ gem 'carrierwave'
 gem 'cloudinary', '1.1.0'
 
 
+
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -40,6 +42,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-sass', '~> 4.4.0'
 gem 'simple_form'
 gem "autoprefixer-rails"
+
 
 # Added by Timo - Theme related gems
 gem 'bootstrap-glyphicons', '~> 0.0.1'

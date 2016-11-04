@@ -2,13 +2,20 @@
 
             <%= simple_form_for(@event) do |f| %>
               <%= f.error_notification %>
+
               <%= f.input :cover, label: 'Use as cover?' %>
 
-              <%= f.input :publish, :collection => ['Not Published','Published','Archive'] %>
+              <%= f.input_field :publish, :collection => ['Not Published','Published','Archive'] %>
               <%= f.input :title %>
               <%= f.input :subtitle %>
               <%= f.input :body %>
           </div>
+          <div class="col-md-10 col-md-offset-1">
+            <h3>Event Type Info => for Cover Page</h3>
+            <%= f.input_field :event_icon, :collection => ['music', 'comedy', 'quiz', 'party', 'football', 'poetry', 'talk', 'magic' ] %>
+             <%= f.input :event_type, placeholder: "Short description such as: 'In Concert' or 'Party?" %>
+          </div>
+
           <div class="col-md-5 col-md-offset-1">
             <h3>Calendar Info</h3>
             <p>(Note: Data will also be used for the Date and Time in headers)</p>

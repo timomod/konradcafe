@@ -15,6 +15,10 @@
   background: #4a4a4a;
 }
 
+.bg-black {
+  background: #fff;
+}
+
 .bg-grey {
   background: #aeaeae;
 }
@@ -28,4 +32,29 @@
 }
 .bg-dark-blue {
   background: #3b5998;
+}
+
+
+
+.centered {
+  text-align: center;
+}
+
+.line-top {
+  border-top: solid 1px #ddd;
+}
+
+.line-bottom{
+  border-bottom: solid 1px #ddd;
+}
+
+.line-text-top {
+  border-top: solid 1px #ddd;
+  padding: 40px 0px 40px 0px;
+  margin: 10px 0px 10px 0px;
+}
+
+.line-text-bottom{
+  border-bottom: solid 1px #ddd;
+
 }

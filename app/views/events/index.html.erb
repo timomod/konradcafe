@@ -35,9 +35,9 @@
           <div class="col-md-4">
 
             <div class="infobox wow ">
-              <h3><%= @cover.weekday %> <%= @cover.day %> <%= square_month(@cover.month.to_i) %>, <%= @cover.start %>-<%= @cover.end%></h3>
+              <h3></i><%= @cover.weekday %> <%= @cover.day %> <%= square_month(@cover.month.to_i) %>, <%= @cover.start %>-<%= @cover.end%></h3>
 
-              <h3>In concert:</h3>
+              <h3><%= @cover.event_type %></h3>
               <h2><%= @cover.title %></h2>
 
 
@@ -91,7 +91,7 @@
 
         <div class="row">
 
-          <div class="col-sm-4  ">
+          <div class="col-sm-4 centered">
             <div class="profile-item">
               <i class="fa fa-envelope-o"></i>
               <h5><a href="#">moien@konradcafe.net</a></h5>
@@ -99,13 +99,13 @@
           </div>
 
           <div class="col-sm-4  ">
-            <div class="profile-item">
+            <div class="profile-item centered" >
               <i class="fa fa-phone"></i>
               <h5>(+352) 26 20 18 94</h5>
             </div>
           </div>
 
-          <div class="col-sm-4  ">
+          <div class="col-sm-4  centered">
             <div class="profile-item">
               <i class="fa fa-map-marker"></i>
               <h5>7 rue du Nord, Luxembourg</h5>
@@ -118,7 +118,7 @@
 
     </section>
 
-    <!-- Profile contact callout section -->
+
 
 
 
@@ -134,28 +134,86 @@
 
         <div class="row">
 
-          <div class="col-md-12 headline wow ">
+          <div class="col-md-12 headline wow centered">
             <h2><%= @eats.header %></h2>
             <p><%= @eats.subheader %></p>
           </div>
 
-          <div class="col-md-2 col-sm-6 hidden-xs wow ">
+          <!-- Drinks Column Start -->
+          <div class="col-md-6">
 
-            <%= image_tag "foodie500_01.jpg", {class: "avatarXXX"}%>
+            <!-- Drinks section -->
+            <div class="col-md-12 line-text-top">
+              <h4><i class="fa fa-coffee" aria-hidden="true"></i>
+                Our Coffee</h4>
+              <p>Gorgonzola, Pear & Walnut Toastie Lorem ipsum doleert blah blah ipsum doleert ratata Lorem ipsum doleert blah blah</p>
+
+              <h4><i class="fa fa-apple" aria-hidden="true"></i>
+                Fresh Juices</h4>
+              <p>Gorgonzola, Pear & Walnut Toastie Lorem ipsum doleert blah blah ipsum doleert</p>
+
+              <h4><i class="fa fa-beer" aria-hidden="true"></i>
+                Speciality beers</h4>
+              <p>Gorgonzola, Pear & Walnut Toastie Lorem ipsum </p>
+
+              <h4><i class="fa fa-glass" aria-hidden="true"></i>
+                Wines</h4>
+              <p>Gorgonzola, Pear & Walnut Toastie Lorem ipsum </p>
+              <h4><i class="fa fa-flask" aria-hidden="true"></i>
+                Spirits & Cocktails</h4>
+              <p>Gorgonzola, Pear & Walnut Toastie Lorem ipsum </p>
+            </div>
+
+
+
           </div>
+          <!-- End Drinks Column  -->
 
-          <div class="col-md-2 col-sm-6 hidden-xs wow ">
-             <%= image_tag "foodie500_02.jpg", {class: "avatarXXXX"}%>
+          <!-- Eat Column Start -->
+          <div class="col-md-6">
+          <!-- Eat section Start -->
+          <div class="col-md-12 line-text-top ">
+              <h4><i class="fa fa-pie-chart" aria-hidden="true"></i>
+                Homemade Savory Pies an Sweet Cakes</h4>
+              <p>Gorgonzola, Pear & Walnut Toastie Lorem ipsum doleert blah blah ipsum doleert ratata Lorem ipsum doleert blah blah</p>
+
+              <h4><i class="fa fa-leaf" aria-hidden="true"></i>
+                Salads</h4>
+              <p>Gorgonzola, Pear & Walnut Toastie Lorem ipsum doleert blah blah ipsum doleert</p>
+
+                <!-- Today's special section-->
+                <div class="col-md-12 lunch-special">
+                  <div class="col-xs-2">
+                    <h3><i class="fa fa-star-o" aria-hidden="true"></i></h3>
+                  </div>
+                  <div class="col-xs-8">
+                    <h3><i class="fa fa-cutlery" aria-hidden="true"></i>
+                    Today's Special</h3>
+                    <h4>Gorgonzola, Pear & Walnut Toastie</h4>
+                  </div>
+                  <div class="col-xs-2">
+                    <h3><i class="fa fa-star-o" aria-hidden="true"></i></h3>
+                  </div>
+                </div>
+                <!-- End Today's specials -->
+
+              <h4><i class="fa fa-bars" aria-hidden="true"></i>
+                Sandwiches</h4>
+              <p>Gorgonzola, Pear & Walnut Toastie Lorem ipsum </p>
           </div>
-
-
-          <div class="col-md-8 col-sm-12 wow ">
-            <h3><%= @eats.title %></h3>
-            <h4><%= @eats.subtitle %></h4>
-            <p><%= simple_format(@eats.body) %></p>
-
+            <!-- End Eat section -->
           </div>
-           </div>
+          <!-- Colum 2 End -->
+
+          <!-- Levelled-Lines under menu columns -->
+          <div class="col-md-6">
+            <div class="col-md-12 line-text-bottom"></div>
+          </div>
+          <div class="col-md-6">
+            <div class="col-md-12 col-sm-hidden line-text-bottom"></div>
+          </div>
+          <!-- End of levelled-lines -->
+
 
         </div><!-- .row -->
 
@@ -163,10 +221,56 @@
 
     </section>
 
-    <!-- Profile section end -->
+    <!-- Eat and drink section end -->
 
 
 
+
+
+
+
+    <!-- Opening Hours section start -->
+
+<!--     <section id="opening-hours" class="section line-bottom line-top opening-hours">
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2 centered">
+            <h4><i class="fa fa-clock-o"></i> Our opening hours</h4>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-md-7th  centered">
+              <p>Mon: 11:00 - 24:00 </p>
+            </div>
+            <div class="col-md-7th  centered">
+              <p>Tues: 11:00 - 24:00 </p>
+            </div>
+            <div class="col-md-7th  centered ">
+              <p>Wed: 11:00 - 24:00 </p>
+            </div>
+            <div class="col-md-7th  centered ">
+              <p>Thur: 11:00 - 14:00 </p>
+            </div>
+            <div class="col-md-7th  centered ">
+              <p>Fri: 11:00 - 01:00 </p>
+            </div>
+            <div class="col-md-7th  centered ">
+              <p>Sat: 10:00 - 01:00 </p>
+            </div>
+            <div class="col-md-7th  centered ">
+              <p>Sun: 11:00 - 24:00 </p>
+            </div>
+          </div>
+
+        </div><!-- .row -->
+
+      </div><!-- .container -->
+
+    </section> -->
+
+    <!-- Opening Hours section end -->
 
 
 
@@ -218,8 +322,7 @@
                 <%= @curry.curry4 %></div>
             </div>
             <div class="col-md-5th col-sm-6">
-              <div class="curry-head">Frida
-                y</div>
+              <div class="curry-head">Friday</div>
               <div class="curry-box <%= weekday_check("friday") %>">
                 <%= @curry.curry5 %>
               </div>
@@ -281,7 +384,8 @@
               <div class="bubble col-md-12">
 
                 <div class="col-md-7">
-                  <h3><%= event.title %></h3>
+                  <h3><i class="<%= event_icon_helper(event.event_icon) %>"aria-hidden='true'></i>
+                    <%= event.title %></h3>
                   <!-- Code below uses "weekday_through_time()" helper -->
                   <h4><%= weekday_through_time(event) %></h4>
                   <p> <strong><%= event.subtitle %></strong></p>

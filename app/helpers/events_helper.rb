@@ -27,34 +27,55 @@ module EventsHelper
   end
 
 
-  def opening_times
-      #Weekdays   Sun-0     Mon-1    Tues-2    Wed-3  Thu-4   Fri-5   Sat-6
+   def opening_times
+      #Weekdays   Sun-0   Mon-1    Tues-2    Wed-3  Thu-4   Fri-5   Sat-6
       schedule = [[11,24],[11,24],[11,24],[11,24],[11,24],[11,01],[10,01]]
+      # Weekday number Sun - Sat => 0 - 6
       day_num = Date.today.strftime("%w").to_i
-      day_time = Date.today.strftime("%H").to_i
+      # The current hour. Ex.: 17:43 => 17
+      time_now = Time.now.strftime("%H").to_i
 
-      today = schedule[day_num]
-      return  "Open Today: #{'%.2f' % today[0]} - #{'%.2f' % today[1]}"
+      # Extract todas's and yesterday's opening hours from schedule
+      todays_schedule = schedule[day_num]
+      yesterdays_schedule = schedule[day_num - 1]
+
+      # Check if its after (more than) 5AM right_now && it the shop is open
+      if time_now > 5 && (time_now >= todays_schedule[0] && time_now < todays_schedule[1])
+        # FYI - '%.2f' transfroms a number into a 2 decimal float
+          "Open now: #{'%.2f' % todays_schedule[0]} - #{'%.2f' % todays_schedule[1]}"
+        # Elseif: Check closed past midnight YESTERDAY && if right_now is less than Closing time yesterday.
+        elsif yesterdays_schedule[1] < 5 && time_now < yesterdays_schedule[1]
+          "Open tonight until: #{'%.2f' % todays_schedule[1]} AM"
+        # Else
+        else
+          "Closed now: #{'%.2f' % todays_schedule[0]} - #{'%.2f' % todays_schedule[1]}"
+      end
+   end
+
+
+   def event_icon_helper(event_icon)
+      icon = case event_icon
+        when "music"
+         "fa fa-music"
+        when "comedy"
+         "fa fa-smile-o"
+        when "quiz"
+         "fa fa-question-circle"
+        when "party"
+         "fa fa-glass"
+        when "football"
+         "fa fa-futbol-o"
+        when "poetry"
+         "fa fa-leaf"
+        when "talk"
+         "fa fa-commenting-o"
+        when "magic"
+         "fa fa-magic"
+        when nil
+         "<%= 'x' %>"
+      end
+
   end
-
-
-
-
-
-
-
-
-
-      # #checks the closing hour in Array is Not past midnight(i.e. that it IS later than 5 am)
-      # #and checks opening times is between opening an closing time
-      # if (schedule[day_time][2] > 5) && ( (day_time >= schedule[day_num][1]) && (day_time <= schedule[day_num][2])
-      #     # Use the day number to get right Array data
-      #     today = schedule[day_num]
-      #     "Open Today: #{ '%.2f' % today[1]} - "
-      # end
-
-
-
 
 
 
@@ -68,5 +89,6 @@ module EventsHelper
 
 
 end
+# FINAL end TAG
 
 

@@ -33,3 +33,36 @@
         float: left;
     }
 }
+
+.col-xs-7th,
+.col-sm-7th,
+.col-md-7th,
+.col-lg-7th {
+    position: relative;
+    min-height: 1px;
+    padding-right: 5thpx;
+    padding-left: 5thpx;
+}
+
+.col-xs-7th {
+    width: 14.2857%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-7th {
+        width: 14.2857%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-7th {
+        width: 14.2857%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-7th {
+        width: 14.2857%;
+        float: left;
+    }
+}

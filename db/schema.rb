@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031033637) do
+ActiveRecord::Schema.define(version: 20161102150000) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 20161031033637) do
     t.string   "weekday"
     t.string   "photo"
     t.boolean  "cover",          default: false, null: false
+    t.string   "event_type"
+    t.string   "event_icon"
   end
 
   add_index "events", ["cover"], name: "index_events_on_cover", using: :btree
