@@ -1,0 +1,50 @@
+
+
+
+
+
+
+.parallax01 {
+    /* The image used */
+    background: image-url('bg4.jpg') no-repeat ;
+
+
+
+    /* Fixed height */
+    height: 360px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.parallax01 h2, .parallax01 h3, .parallax01 h4, .parallax01 p {
+  color: #fff;
+}
+
+
+.parallax02 {
+    /* The image used */
+    background: image-url('bg5.jpg') no-repeat ;
+
+
+
+    /* Fixed height */
+    height: 360px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.parallax02 h2, .parallax02 h3, .parallax02 h4, .parallax02 p {
+  color: #fff;
+}

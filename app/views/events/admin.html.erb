@@ -8,6 +8,8 @@
             <%= link_to "Create a new Event", new_event_path, {class: "btn-treehouse"} %>
           </div>
         </div>
+
+
         <div class="row">
           <div class="col-md-12">
 
@@ -19,6 +21,7 @@
               <% if event.publish == "Published" %>
                 <hr>
 
+                <h4>Position: <%= event.position %></h4>
                 <h3><%= event.title %></h3>
                 <h4><%=  event.weekday %>  <%=  event.day %>.<%=  event.month %>.<%=  event.year %>, <%=  event.start %></h4>
                 <h4><%=  event.subtitle %></h4>
@@ -32,6 +35,7 @@
 
                 <br>
                 <i class="icon-md ion-ios-eye"></i>
+
                 <%= link_to " View Event", event %> |
                 <%= link_to " Edit Event", edit_event_path(event) %> |
                 <%= link_to " Delete Event", event_path(event), method: :delete, data: {confirm: "Are you sure you want to delete?"} %>

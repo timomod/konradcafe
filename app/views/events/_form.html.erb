@@ -1,11 +1,18 @@
+
+
+
 <div class="col-md-10 col-md-offset-1">
+
+             <%= (1..@count).to_a %>
 
             <%= simple_form_for(@event) do |f| %>
               <%= f.error_notification %>
 
               <%= f.input :cover, label: 'Use as cover?' %>
 
-              <%= f.input_field :publish, :collection => ['Not Published','Published','Archive'] %>
+              <%= f.input_field :publish, :collection => ['Not Published','Published','Archive'], default: "Not Published" %> <br><br>
+              <p><strong>Change event Position?</strong></p>
+              <%= f.input_field :position, :collection => (1..@count).to_a %><br><br>
               <%= f.input :title %>
               <%= f.input :subtitle %>
               <%= f.input :body %>

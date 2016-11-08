@@ -27,6 +27,8 @@ gem 'figaro'
 gem 'carrierwave'
 gem 'cloudinary', '1.1.0'
 
+# List sorting
+gem 'acts_as_list', '~> 0.8.2'
 
 
 

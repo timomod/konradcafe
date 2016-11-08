@@ -17,7 +17,14 @@ module EventsHelper
     end
   end
 
-  # Codence Event-model date info into one string
+  # Check if date today == date of event.
+  # Must be inside .each loop with |event|
+  def event_today?(event)
+    Date.today.strftime("%e,%m,%Y").strip == "#{event.day},#{event.month},#{event.year}"
+
+  end
+
+  # Condence Event-model date info into one string
   def weekday_through_year(event)
     "#{event.weekday} #{event.day}.#{event.month}.#{event.year}"
   end
@@ -40,7 +47,7 @@ module EventsHelper
       yesterdays_schedule = schedule[day_num - 1]
 
       # Check if its after (more than) 5AM right_now && it the shop is open
-      if time_now > 5 && (time_now >= todays_schedule[0] && time_now < todays_schedule[1])
+      if time_now > 5 && (time_now >= todays_schedule[0] && time_now < 24)
         # FYI - '%.2f' transfroms a number into a 2 decimal float
           "Open now: #{'%.2f' % todays_schedule[0]} - #{'%.2f' % todays_schedule[1]}"
         # Elseif: Check closed past midnight YESTERDAY && if right_now is less than Closing time yesterday.
@@ -74,6 +81,11 @@ module EventsHelper
         when nil
          "<%= 'x' %>"
       end
+
+  end
+
+  def event_count_helper
+   0
 
   end
 

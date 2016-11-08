@@ -6,6 +6,7 @@ class EventsController < ApplicationController
 
   before_action :find_event, only: [:show, :edit, :update, :destroy]
 
+  before_action :count_events, only: [:new, :create, :edit, :update]
   # def list
   #   if params[:approved] == "false"
   #     @users = User.where(approved: false)
@@ -15,14 +16,14 @@ class EventsController < ApplicationController
   # end
 
   def index
-    @events = Event.all.order("created_at DESC")
+    @events = Event.order(position: :asc)
     @eats = Eat.last
     @cover = Event.where(cover: true).first
     @curry = Curry.find(1)
   end
 
    def admin
-      @events = Event.all.order("created_at DESC")
+      @events = Event.order(position: :asc)
   end
 
   def new
@@ -61,12 +62,16 @@ class EventsController < ApplicationController
 
   private
 
+  def count_events
+    @count = Event.where(publish: "Published").count + 1
+  end
+
   def find_event
     @event = Event.find(params[:id])
   end
 
   def event_params
-    params.require(:event).permit(:title, :subtitle, :body, :weekday, :day, :month, :year, :publish, :start, :end, :photo, :photo_cache, :cover, :event_icon, :event_title)
+    params.require(:event).permit(:title, :subtitle, :body, :weekday, :day, :month, :year, :publish, :start, :end, :photo, :photo_cache, :cover, :event_icon, :event_title, :position)
   end
 
 end

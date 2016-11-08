@@ -1,3 +1,7 @@
+
+// Side ribbon with dates
+
+
 .bubble {
 // clear: both;
 margin: 20px auto;
@@ -56,3 +60,70 @@ left: 350px;
 top: 35px;
 z-index: -1;
 }
+
+// Corner Ribbon
+
+.corner-ribbon{
+  width: 200px;
+  background: #EE5F5B;
+  position: absolute;
+  padding: 0px;
+  top: 25px;
+  left: -50px;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  z-index: 200;
+  font-weight: 800;
+}
+
+.hide-corner-top {
+  position: absolute;
+  width: 150px;
+  height: 38px;
+  background: #fff;
+  z-index: 210;
+  top: -39px;
+  right: 50px;
+  left: auto;
+}
+
+.hide-corner-right {
+  position: absolute;
+  width: 38px;
+  height: 150px;
+  background: #fff;
+  z-index: 210;
+  top: 50px;
+  right: -39px;
+  left: auto;
+}
+
+/* Custom styles */
+
+.corner-ribbon.sticky{
+  position: fixed;
+}
+
+.corner-ribbon.shadow{
+  box-shadow: 0 0 3px rgba(0,0,0,.3);
+}
+
+/* Position */
+
+.corner-ribbon.top-right{
+  top: 25px;
+  right: -50px;
+  left: auto;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/*Color */
+.corner-ribbon.red{
+  background: #e43;
+}
+
