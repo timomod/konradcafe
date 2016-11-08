@@ -1,0 +1,57 @@
+
+    <section id="thai-curry" class="section bg-lite-grey">
+      <div class="container curry-bg">
+        <div class="row">
+          <!-- Curry logo -->
+          <div class="col-md-2  col-md-offset-1">
+            <%= image_tag "curry-logo.png", {class: "img-responsive curry"}%>
+          </div>
+          <!-- Curry title-->
+          <div class="col-md-6 text-center">
+            <div class="headline">
+              <h3><%= @curry.title %></h3>
+              <h4><%= @curry.date %></h4>
+              <p><%= @curry.description %></p>
+            </div>
+          </div>
+          <!-- curry boxes -->
+          <div class="col-md-12 ">
+            <!-- Below: "weekday_check" helper highlights current weekday -->
+            <div class="col-md-5th col-sm-6">
+              <div class="curry-head">Monday</div>
+              <div class="curry-box <%= weekday_check("monday") %>"
+                ><%= @curry.curry1 %>
+              </div>
+            </div>
+            <div class="col-md-5th col-sm-6">
+              <div class="curry-head">Tuesday</div>
+              <div class="curry-box <%= weekday_check("tuesday") %>">
+                <%= @curry.curry2 %>
+              </div>
+            </div>
+            <div class="col-md-5th col-sm-6">
+              <div class="curry-head">Wednesday</div>
+              <div class="curry-box <%= weekday_check("wednesday") %>">
+                <%= @curry.curry3 %>
+              </div>
+            </div>
+            <div class="col-md-5th col-sm-6">
+              <div class="curry-head">Thursday</div>
+              <div class="curry-box <%= weekday_check("thursday") %>">
+                <%= @curry.curry4 %></div>
+            </div>
+            <div class="col-md-5th col-sm-6">
+              <div class="curry-head">Friday</div>
+              <div class="curry-box <%= weekday_check("friday") %>">
+                <%= @curry.curry5 %>
+              </div>
+            </div>
+
+          </div> <!-- end curry boxes -->
+
+
+        </div><!-- .row -->
+
+      </div><!-- .container -->
+
+    </section>

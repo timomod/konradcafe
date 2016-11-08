@@ -1,0 +1,75 @@
+    <section id="concerts" class="section">
+
+      <div class="container">
+
+
+        <div class="row">
+
+          <div class="col-md-12 headline wow ">
+            <h2>Events</h2>
+            <p>Upcoming musical acts, standup comedy, quizzes & more.</p>
+          </div>
+
+          <div class="col-md-12">
+            <div class="row">
+            <% @events.each do |event| %>
+             <% if event.publish == "Published"%>
+              <div class="bubble col-md-12 ">
+                <% if event_today?(event) %>
+                   <div class="corner-ribbon top-right">Tonight</div>
+                   <div class="hide-corner-top"></div>
+                   <div class="hide-corner-right"></div>
+                <% end %>
+
+                <div class="col-md-7">
+                  <h3><i class="<%= event_icon_helper(event.event_icon) %>"aria-hidden='true'></i>
+                    <%= event.title %></h3>
+                  <!-- Code below uses "weekday_through_time()" helper -->
+                  <h4><%= weekday_through_time(event) %></h4>
+                  <p> <strong><%= event.subtitle %></strong></p>
+                  <div class="text">
+                    <p><%= simple_format(event.body) %></p>
+                  </div>
+                </div>
+                <!-- Event Image -->
+                <div class="col-md-5 ">
+                  <!-- image_tag "p9.jpg", {class: "img-responsive"} -->
+                  <%= cl_image_tag event.photo,  {class: "img-responsive"}  %>
+                </div>
+
+
+                <!-- Add DATE to CAlendar -->
+                <div class="col-md-7">
+                  <div title="Add to Calendar" class="addeventatc">
+                    Add to Calendar
+                    <span class="start"><%= event.day %>/<%= event.month %>/<%= event.year %> <%= event.start %></span>
+                    <span class="end"><%= event.day %>/<%= event.month %>/<%= event.year %> <%= event.end %></span>
+                    <span class="timezone">Europe/Luxembourg</span>
+                    <span class="title"><%= event.title %></span>
+                    <span class="description"><%= event.subtitle %></span>
+                    <span class="location"><%= event.address_one %></span>
+                    <span class="date_format">DD/MM/YYYY</span>
+                  </div>
+                </div>
+
+
+                <!-- Ribbon "Rectangle" with day and month -->
+                <div class="rectangle">
+                  <!-- Code below uses "squar_month()" helper -->
+                  <p><%= event.day %><br><%= square_month(event.month.to_i).upcase %></p>
+                </div>
+                <!-- Ribbon shaded "triangle" -->
+                <div class="triangle-l"></div>
+                 </div>
+                 <% end %>
+               <% end %>
+            </div>
+          </div>
+
+
+
+        </div><!-- .row -->
+
+      </div><!-- .container -->
+
+    </section>
