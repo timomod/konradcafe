@@ -13,7 +13,7 @@
              <h4><%= @event.weekday %> <%= @event.day %>.<%= @event.month %>.<%= @event.year %>, <%= @event.start %> - <%= @event.end %></h4>
             <h4><%=  @event.subtitle %></h4>
 
-            <p><%=  @event.body %></p>
+            <p><%=  @event.body.html_safe %></p>
 
 
           </div>

@@ -18,10 +18,14 @@
 //= require jquery.countTo
 //= require jquery.fitvids
 //= require jquery.magnific-popup
-//= requir//= require jquery.simple-text-rotator
+//= require jquery.simple-text-rotator
 //= require jquery.waypoints
+//= require jquery-ui/datepicker
 
 //= require bootstrap-sprockets
+
+
+
 
 //= require custom
 //= require map
@@ -29,6 +33,8 @@
 //= require smoothscroll
 //= require wow
 
-
-
 //= require_tree .
+
+
+
+

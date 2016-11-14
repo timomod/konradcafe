@@ -18,7 +18,8 @@ class EventsController < ApplicationController
   def index
     @events = Event.order(position: :asc)
     @eats = Eat.last
-    @cover = Event.where(cover: true).first
+    @cover = Cover.find(5)
+    @event_cover = Event.where(cover: true).first
     @curry = Curry.find(1)
   end
 
@@ -71,7 +72,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :subtitle, :body, :weekday, :day, :month, :year, :publish, :start, :end, :photo, :photo_cache, :cover, :event_icon, :event_title, :event_type, :position)
+    params.require(:event).permit(:title, :subtitle, :body, :weekday, :day, :month, :year, :publish, :start, :end, :photo, :photo_cache, :cover, :event_icon, :event_title, :event_type, :position, :start_date, :end_date, :start_display, :end_display)
   end
 
 end

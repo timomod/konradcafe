@@ -22,14 +22,16 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 # gem 'turbolinks'
 
+gem 'jquery-ui-rails'
+
 # Image upload gems
 gem 'figaro'
 gem 'carrierwave'
 gem 'cloudinary', '1.1.0'
 
+
 # List sorting
 gem 'acts_as_list', '~> 0.8.2'
-
 
 
 # bundle exec rake doc:rails generates the API under doc/api.

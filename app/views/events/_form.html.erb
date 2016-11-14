@@ -1,25 +1,88 @@
 
 
 
-<div class="col-md-10 col-md-offset-1">
 
-             <%= (1..@count).to_a %>
+      <%= simple_form_for(@event) do |f| %>
+      <%= f.error_notification %>
 
-            <%= simple_form_for(@event) do |f| %>
-              <%= f.error_notification %>
 
-              <%= f.input :cover, label: 'Use as cover?' %>
-
-              <%= f.input_field :publish, :collection => ['Not Published','Published','Archive'], default: "Not Published" %> <br><br>
-              <p><strong>Change event Position?</strong></p>
-              <%= f.input_field :position, :collection => (1..@count).to_a %><br><br>
-              <%= f.input :title %>
-              <%= f.input :subtitle %>
-              <%= f.input :body %>
+        <!-- Use as cover? -->
+        <div class="col-md-10 col-md-offset-1 form-area">
+          <h3>Use as Cover page?</h3>
+          <p>If you want to use this Event on the cover page, tick the "Use as Cover?" box and indicated the start and end dates for diplaying the Event. After the end date, the default Cover and texts will automatically be shown.</p>
+          <p>Note that cover will NOT be shown if the Event has not been published (see below).</p>
+            <p><%= f.input :cover, label: 'Use as cover?' %></p>
+            <p><%= f.input :start_display, label: 'Display as cover from date:' %></p>
+            <p><%= f.input :end_display, label: 'End Date:' %></p>
           </div>
+
+          <!-- Indicate Published status -->
+
+          <div class="col-md-10 col-md-offset-1 form-area">
+            <h3>Publishing Status</h3>
+            <p>Choices:</p>
+            <ul>
+              <li>Not Published: Event is not shown on live website (default setting)</li>
+              <li>Published: Visible on live website, and on the Cover page if the "Use as Cover?" option has been selected.</li>
+              <li>Archive: Event is moved to the Events Archive and is not visible on live website</li>
+            </ul>
+              <%= f.input_field :publish, :collection => ['Not Published','Published','Archive'], default: "Not Published" %>
+          </div>
+
+          <!-- Event Position -->
+          <div class="col-md-10 col-md-offset-1 form-area">
+              <h3>Change Event Position?</h3>
+              <p>New Events are automatically added to the TOP of the Events section. Use the drop-down below to change event position</p>
+              <%= f.input_field :position, :collection => (1..@count).to_a, default: 1 %>
+            </div>
+
+            <!-- Main content area -->
+            <div class="col-md-10 col-md-offset-1 form-area">
+              <h3>Main Content of Event</h3>
+              <%= f.input :title, label: "Title: Artist or Event name", placeholder: "e.g.: The Dodgy Dodgers" %>
+
+              <%= f.input :subtitle, label: "Subtitle: Short description/slogan", placeholder: "e.g.: Raw and resfreshing new age techno tango from Toulouse!" %>
+              <%= f.input :body, label: "Main Text Area" %>
+
+
+
+              <!-- HTML Tag descriptions - Main content Sub area -->
+              <div class="col-xs-12 form-area-gray">
+                <h4>Common HTML Tags</h4>
+                <p>Below are some of the most common HTML tages that you can use in the Main Text area above. The effects will be visible in live and CMS instances of the event, but not here on the edit page.</p>
+                <p><strong>Bold:</strong> &#60;strong&#62;Your text.&#60;/strong&#62;. Results in =&#62; <strong>Your text.</strong></p>
+                <p><strong>Italic:</strong> &#60;em&#62;Your text.&#60;/em&#62;. Results in =&#62; <em>Your text.</em></p>
+                <p><strong>Underline:</strong> &#60;ins&#62;Your text.&#60;/ins&#62;. Results in =&#62; <ins>Your text.</ins></p>
+                <p><strong>Link (e.g, to Google):</strong> &#60;a href="http://google.com"&#62;Google Link&#60;/a&#62;. Results in =&#62; <a href="http://www.google.com">Google Link</a></p>
+              </div>
+
+              <!-- Icons - Main content Sub area -->
+              <div class="col-xs-12 form-area-gray">
+                <div class="col-xs-2">
+                   <%= f.input :event_icon, :collection => ['music', 'comedy', 'quiz', 'party', 'football', 'poetry', 'talk', 'magic' ], label: "Icons" %>
+                </div>
+                <div class="col-md-12">
+                  <p>If you choose an Icon, it will be displayed to the left of the Title text in the Events field on the homepage. <br>The Icons available are:</p>
+                </div>
+                <div class="col-md-12">
+                  <p>Music: <i class="fa fa-music" aria-hidden="true"></i> |
+                    Comedy: <i class="fa fa-smile-o" aria-hidden="true"></i> |
+                    Quiz: <i class="fa fa-question-circle" aria-hidden="true"></i> |
+                    Party: <i class="fa fa-glass" aria-hidden="true"></i> |
+                    Football: <i class="fa fa-futbol-o" aria-hidden="true"></i> |
+                    Poetry: <i class="fa fa-leaf" aria-hidden="true"></i> |
+                    Talk: <i class="fa fa-commenting-o" aria-hidden="true"></i> |
+                    Magic: <i class="fa fa-magic" aria-hidden="true"></i>
+                  </p>
+                </div>
+              </div>
+
+          </div>
+          <!-- End: Main content area -->
+
           <div class="col-md-10 col-md-offset-1">
             <h3>Event Type Info => for Cover Page</h3>
-            <%= f.input_field :event_icon, :collection => ['music', 'comedy', 'quiz', 'party', 'football', 'poetry', 'talk', 'magic' ] %>
+
              <%= f.input :event_type, placeholder: "Short description such as: 'In Concert' or 'Party?" %>
           </div>
 

@@ -1,0 +1,10 @@
+<h1>Covers#new</h1>
+            <%= simple_form_for(@cover) do |f| %>
+             <%= f.input :title %>
+              <%= f.input :subtitle %>
+              <%= f.input :subtitle2 %>
+              <%= f.input :body %>
+              <%= f.input :cover_photo %>
+              <%= f.input :cover_photo_cache, as: :hidden %>
+              <%= f.submit %>
+            <% end %>

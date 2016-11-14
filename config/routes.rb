@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
 
 
+
+
  as :user do
    get 'registrations/:id/edit' => 'registrations#edit', :as => :edit_user_profile
  end
@@ -35,7 +37,9 @@ Rails.application.routes.draw do
 
   get 'eats/admin' => 'eats#admin'
 
-  get 'covers/admin' => 'covers#admin'
+  get 'covers/index' => 'covers#index'
+  # get 'covers/:id' => 'covers#show'
+
 
   get 'curries/admin' => 'curries#admin'
 

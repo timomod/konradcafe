@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107150842) do
+ActiveRecord::Schema.define(version: 20161114120026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,9 @@ ActiveRecord::Schema.define(version: 20161107150842) do
     t.string   "subtitle"
     t.string   "subtitle2"
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "cover_photo"
   end
 
   create_table "curries", force: :cascade do |t|
@@ -77,6 +78,10 @@ ActiveRecord::Schema.define(version: 20161107150842) do
     t.string   "event_type"
     t.string   "event_icon"
     t.integer  "position"
+    t.date     "end_date"
+    t.date     "start_display"
+    t.date     "end_display"
+    t.date     "start_date"
   end
 
   add_index "events", ["cover"], name: "index_events_on_cover", using: :btree

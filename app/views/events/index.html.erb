@@ -1,7 +1,7 @@
 <!-- Intro section start -->
 
 
-  <% fixed = false %>
+  <% fixed = true %>
   <!-- Cover Images Start => Incl. <Section> tag! -->
   <% if fixed == true %>
    <%= render "events/sections/cover_image1" %>
@@ -32,10 +32,10 @@
           <div class="col-md-4">
 
             <div class="infobox wow ">
-              <h3></i><%= @cover.weekday %> <%= @cover.day %> <%= square_month(@cover.month.to_i) %>, <%= @cover.start %>-<%= @cover.end%></h3>
+              <h3></i><%= @event_cover.weekday %> <%= @event_cover.day %> <%= square_month(@event_cover.month.to_i) %>, <%= @event_cover.start %>-<%= @event_cover.end%></h3>
 
-              <h3><%= @cover.event_type %></h3>
-              <h2><%= @cover.title %></h2>
+              <h3><%= @event_cover.event_type %></h3>
+              <h2><%= @event_cover.title %></h2>
 
 
 

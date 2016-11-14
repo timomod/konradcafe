@@ -133,10 +133,11 @@ a,
 
 .form-control {
 	background: #FFF;
-	border: 2px solid #C4C4C4;
-	height: 54px;
+	border: 1px solid #C4C4C4;
+	height: auto;
 	font-size: 14px;
 	padding: 15px;
+  margin: 0px 10px 0px 0px;
 	color: #777;
 }
 
@@ -158,6 +159,7 @@ a,
 	font-size: 14px;
 	padding: 17px 27px;
 	border: 0;
+  margin: 20px 0px 20px 0px;
 }
 
 .btn:hover, .btn:focus, .btn:active, .btn.active {
