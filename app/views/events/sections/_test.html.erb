@@ -1,0 +1,21 @@
+
+
+<section id="events" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <% @events.each do |event| %>
+                <!-- Card content start -->
+                <div class="col-md-7">
+
+                  <h4><%= event.start_date.try(:strftime, '%A, %d %b %Y') %></h4>
+
+                </div>
+                <% end %>
+            </div>
+          </div>
+          <!-- Events Card End -->
+        </div><!-- .row -->
+      </div><!-- .container -->
+    </section>

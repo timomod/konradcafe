@@ -5,18 +5,25 @@
         <div class="row">
 
           <div class="col-md-10 col-md-offset-1">
-            <%= link_to "<< Back to Curries", curries_admin_path %>
+            <%= link_to "<< Back to CMS Home", admin_dashboard_path %>
             <h2>Thai Curries of the Week</h2>
             <p>Edit the Thai Curries of the Week.</p>
           </div>
 
+
+
+          <div class="col-md-10 col-md-offset-1 form-area">
           <%= simple_form_for(@curry) do |f| %>
             <%= f.error_notification %>
-
+            <h4>Publish Curries?</h4>
+            <%= f.input :publish, label: "Tick box to show Curries of the Week on the Live website" %>
+          </div>
+          <div class="col-md-10 col-md-offset-1 form-area">
             <%= f.input :title %>
             <%= f.input :date %>
             <%= f.input :description %>
-
+          </div>
+          <div class="col-md-10 col-md-offset-1 form-area">
             <%= f.input :curry1, label: "Monday" %>
 
             <%= f.input :curry2, label: "Tuesday" %>
@@ -29,7 +36,7 @@
 
             <%= f.button :submit %>
           <% end %>
-
+        </div>
         </div>
       </div>
 </sectionn>

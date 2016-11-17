@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
 
+  require 'date'
+
   skip_before_action :authenticate_user!, only: :index
 
   layout "devise", only: [:admin, :new, :create, :show, :edit, :update, :destroy, :list]
@@ -7,19 +9,14 @@ class EventsController < ApplicationController
   before_action :find_event, only: [:show, :edit, :update, :destroy]
 
   before_action :count_events, only: [:new, :create, :edit, :update]
-  # def list
-  #   if params[:approved] == "false"
-  #     @users = User.where(approved: false)
-  #   else
-  #     @users = User.all
-  #   end
-  # end
+
+
 
   def index
     @events = Event.order(position: :asc)
     @eats = Eat.last
     @cover = Cover.find(5)
-    @event_cover = Event.where(cover: true).first
+    @event_cover = Event.is_cover.displayed_now(Date.today).first
     @curry = Curry.find(1)
   end
 

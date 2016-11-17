@@ -16,22 +16,22 @@ layout "devise", only: [:admin, :new, :create, :show, :edit, :update, :destroy]
   def edit
   end
 
-  def new
-      @curry = Curry.new
-  end
+  # def new
+  #     @curry = Curry.new
+  # end
 
-  def create
-    @curry = Curry.new(curry_params)
-    if @curry.save
-      redirect_to @curry
-    else
-      render "new"
-    end
-  end
+  # def create
+  #   @curry = Curry.new(curry_params)
+  #   if @curry.save
+  #     redirect_to @curry
+  #   else
+  #     render "new"
+  #   end
+  # end
 
   def update
     if @curry.update(curry_params)
-      redirect_to @curry
+      render 'edit'
     else
       render 'edit'
     end
@@ -48,7 +48,7 @@ private
   end
 
   def curry_params
-    params.require(:curry).permit(:title, :description, :monday, :tuesday, :wednesday, :thursday, :friday, :curry1, :curry2, :curry3, :curry4, :curry5, :date)
+    params.require(:curry).permit(:title, :description, :monday, :tuesday, :wednesday, :thursday, :friday, :curry1, :curry2, :curry3, :curry4, :curry5, :date, :publish)
   end
 
 

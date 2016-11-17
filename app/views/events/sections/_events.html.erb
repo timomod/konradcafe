@@ -1,4 +1,4 @@
-    <section id="concerts" class="section">
+    <section id="events" class="section">
 
       <div class="container">
 
@@ -14,18 +14,21 @@
             <div class="row">
             <% @events.each do |event| %>
              <% if event.publish == "Published"%>
+
+             <!-- Events Card start -->
               <div class="bubble col-md-12 ">
+
+                <!-- Display Today Ribbon if event is today-->
                 <% if event_today?(event) %>
                    <div class="corner-ribbon top-right">Tonight</div>
                    <div class="hide-corner-top"></div>
                    <div class="hide-corner-right"></div>
                 <% end %>
-
+                <!-- Card content start -->
                 <div class="col-md-7">
                   <h3><i class="<%= event_icon_helper(event.event_icon) %>"aria-hidden='true'></i>
                     <%= event.title %></h3>
-                  <!-- Code below uses "weekday_through_time()" helper -->
-                  <h4><%= weekday_through_time(event) %></h4>
+                  <h4><%= event.start_date.try(:strftime,'%A, %d %b %Y') %>, <%= event.start %>-<%= event.end %></h4>
                   <p> <strong><%= event.subtitle %></strong></p>
                   <div class="text">
                     <p><%= simple_format(event.body.html_safe) %></p>
@@ -39,11 +42,12 @@
 
 
                 <!-- Add DATE to CAlendar -->
+
                 <div class="col-md-7">
                   <div title="Add to Calendar" class="addeventatc">
                     Add to Calendar
-                    <span class="start"><%= event.day %>/<%= event.month %>/<%= event.year %> <%= event.start %></span>
-                    <span class="end"><%= event.day %>/<%= event.month %>/<%= event.year %> <%= event.end %></span>
+                    <span class="start"><%= event.start_date.try(:strftime,'%d/%m/%Y') %> <%= event.start %></span>
+                    <span class="end"><%= event.end_date.try(:strftime,'%d/%m/%Y') %>  <%= event.end %></span>
                     <span class="timezone">Europe/Luxembourg</span>
                     <span class="title"><%= event.title %></span>
                     <span class="description"><%= event.subtitle %></span>
@@ -56,11 +60,13 @@
                 <!-- Ribbon "Rectangle" with day and month -->
                 <div class="rectangle">
                   <!-- Code below uses "squar_month()" helper -->
-                  <p><%= event.day %><br><%= square_month(event.month.to_i).upcase %></p>
+                  <p><%= event.start_date.try(:strftime,'%d') %>
+                    <br><%= event.start_date.try(:strftime,'%b').to_s.upcase %></p>
                 </div>
                 <!-- Ribbon shaded "triangle" -->
                 <div class="triangle-l"></div>
-                 </div>
+              </div>
+              <!-- Events Card End -->
                  <% end %>
                <% end %>
             </div>
