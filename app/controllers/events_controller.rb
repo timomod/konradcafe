@@ -14,10 +14,12 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.order(position: :asc)
-    @eats = Eat.last
+    @eats = Eat.order(position: :asc)
     @cover = Cover.find(5)
     @event_cover = Event.is_cover.displayed_now(Date.today).first
     @curry = Curry.find(1)
+    @menu_header = Menu.where(header: true).first
+    @menu_special = Menu.where(special: true).first
   end
 
    def admin

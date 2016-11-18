@@ -69,8 +69,7 @@ module EventsHelper
           when nil
            "<%= 'x' %>"
         end
-
-    end
+      end
 
   # def event_count_helper
   #  0

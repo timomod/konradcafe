@@ -1,12 +1,31 @@
 <%= simple_form_for(@eat) do |f| %>
   <%= f.error_notification %>
 
-   <%= f.input :header %>
-  <%= f.input :subheader %>
-  <%= f.input :title %>
-  <%= f.input :subtitle %>
-  <%= f.input :body %>
+  <!-- Position -->
+  <div class="col-md-12  form-area">
+    <h3><i class="fa fa-arrows-v" aria-hidden="true"></i> Change Position Menu Item?</h3>
+    <p>Positions 1-5 will be shown in Column 1, and 6-10 in Column 2.</p>
+    <%= f.input_field :position, :collection => (1..8) %>
+  </div>
 
-  <%= f.button :submit %>
+<!-- Main content -->
+<div class="col-md-12  form-area">
+  <div class="col-xs-2">
+     <%= f.input :menu_icon, :collection => ['coffee', 'juice', 'beer', 'wine', 'spirit', 'pie', 'salad', 'sandwich' ], label: "Icons" %>
+  </div>
+  <%= f.input :title %>
+  <%= f.input :body %>
+</div>
+
+
+
+<!-- Button -->
+<div class="col-md-12 row ">
+  <%= f.button :submit, "Update Menu Item" %>
+</div>
+
 <% end %>
+
+
+
 

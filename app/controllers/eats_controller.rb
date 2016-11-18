@@ -1,10 +1,14 @@
 class EatsController < ApplicationController
 
-layout "devise", only: [:admin, :new, :create, :show, :edit, :update, :destroy]
+layout "devise", only: [:index, :admin, :new, :create, :show, :edit, :update, :destroy]
 
   before_action :find_eat, only: [:show, :edit, :update, :destroy]
 
-
+  def index
+    @eats = Eat.order(position: :asc)
+    @menu_header = Menu.where(header: true).first
+    @menu_special = Menu.where(special: true).first
+  end
 
 
    def admin
@@ -32,7 +36,7 @@ layout "devise", only: [:admin, :new, :create, :show, :edit, :update, :destroy]
 
   def update
     if @eat.update(eat_params)
-      redirect_to @eat
+      redirect_to eats_index_path
     else
       render 'edit'
     end
@@ -52,7 +56,7 @@ layout "devise", only: [:admin, :new, :create, :show, :edit, :update, :destroy]
   end
 
   def eat_params
-    params.require(:eat).permit(:header, :subheader, :title, :subtitle, :body)
+    params.require(:eat).permit(:header, :subheader, :title, :subtitle, :body, :position, :menu_icon)
   end
 
 end

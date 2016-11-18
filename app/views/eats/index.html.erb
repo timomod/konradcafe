@@ -1,2 +1,73 @@
-<h1>Eats#index</h1>
-<p>Find me in app/views/eats/index.html.erb</p>
+<section class="section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xs-10 col-md-offset-1 form-area">
+          <h3>Eat and Drink Menu</h3>
+
+          <!-- ******* Published Events ******* -->
+
+          <!-- Column 1 -->
+          <div class="col-md-6 ">
+            <div class="col-xs-12 line-text-top">
+              <h3>Menu Colum 1</h3>
+              <hr>
+              <% @eats.each do |item| %>
+                <% if item.position <= 5 %>
+                  <div class="dotted-underlinez">
+                    <h4>Position: <%= item.position %></h4>
+                    <h4><i class="<%= menu_icon_helper(item.menu_icon) %>"aria-hidden='true'></i> <%= item.title %></h4>
+                    <p><%=  item.body %></p>
+                    <%= link_to " Edit Menu Item", edit_eat_path(item) %>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <!-- Coulm 1 End -->
+
+          <!-- Column 2 -->
+          <div class="col-md-6">
+            <div class="col-xs-12 line-text-top">
+              <h3>Menu Colum 2</h3>
+              <hr>
+              <% @eats.each do |item| %>
+                  <% if item.position >= 6 && item.position <= 10 %>
+                    <div class="dotted-underlinez">
+                      <h4>Position: <%= item.position %></h4>
+                      <h4><i class="<%= menu_icon_helper(item.menu_icon) %>"aria-hidden='true'></i> <%= item.title %></h4>
+                      <p><%=  item.body %></p>
+                      <%= link_to " Edit Menu Item", edit_eat_path(item) %>
+                    </div>
+                  <% end %>
+              <% end %>
+            </div>
+          </div>
+          <!-- Colum 2 End -->
+
+          <!-- Today's special section-->
+          <div class="col-md-6">
+            <div class="col-xs-12 lunch-special">
+              <div class="col-xs-2">
+                <h3><i class="fa fa-star-o" aria-hidden="true"></i></h3>
+              </div>
+              <div class="col-xs-8">
+                <h3><i class="fa fa-cutlery" aria-hidden="true"></i>
+                <%= @menu_special.title %></h3>
+                <h4><%= @menu_special.subtitle %></h4>
+              </div>
+              <div class="col-xs-2">
+                <h3><i class="fa fa-star-o" aria-hidden="true"></i></h3>
+              </div>
+            </div>
+              <%= link_to "Edit Today's Special", edit_menu_path(@menu_special) %>
+          </div>
+       <!-- End Today's specials -->
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
