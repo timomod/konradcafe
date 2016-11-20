@@ -44,9 +44,11 @@
                </div>
                 <% end %>
               <% end %>
+               <% if @menu_special.publish == true %>
               <!-- Today's Specials section start -->
               <%= render "events/sections/todays_specials" %>
               <!-- Today's Specials section end -->
+              <% end %>
             </div> <!-- End section 2 -->
           </div>
 

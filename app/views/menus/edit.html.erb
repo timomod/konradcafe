@@ -1,2 +1,35 @@
+<section class="section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xs-10 col-md-offset-1 form-area">
+          <h3>Edit Today's Special</h3>
+
+
 <h1>Menus#edit</h1>
 <p>Find me in app/views/menus/edit.html.erb</p>
+
+<%= simple_form_for(@menu) do |f| %>
+  <%= f.error_notification %>
+
+
+<!-- Main content -->
+<div class="col-md-12  form-area">
+  <p>Select/deselect tick box to show/hide "Today's Special on the live website</p>
+  <%= f.input :publish %>
+  <%= f.input :title %>
+  <%= f.input :subtitle %>
+</div>
+
+
+
+<!-- Button -->
+<div class="col-md-12 row ">
+  <%= f.button :submit, "Update Toda'y Special Item" %>
+</div>
+
+<% end %>
+
+</div>
+</div>
+</section>

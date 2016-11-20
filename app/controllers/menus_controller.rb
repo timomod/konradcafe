@@ -2,8 +2,9 @@ class MenusController < ApplicationController
 
   layout "devise"
 
+   before_action :find_menu, only: [:edit, :update]
+
   def edit
-    @menu = Menu.find(params[:id])
   end
 
   def update
@@ -14,10 +15,15 @@ class MenusController < ApplicationController
     end
   end
 
+
   private
 
+  def find_menu
+    @menu = Menu.find(params[:id])
+  end
+
   def menu_params
-    params.require(:menu).permit(:title, :subtitle, :header, :special)
+    params.require(:menu).permit(:title, :subtitle, :header, :special, :publish)
   end
 
 end
