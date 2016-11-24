@@ -1,14 +1,24 @@
 <section class="section">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col-md-6 col-md-offset-3 ">
 
+        <h3>Default Cover</h3>
 
+        <p>Deafult Cover Image and Texts are displayed as default when no Events are used as cover</p>
+        <h4>Image:</h4>
+        <%= cl_image_tag @covers.cover_photo, height: 400, width: 600, crop: :fill %>
 
-        <h2>Default Cover Image</h2>
-        <div>
-        <%= cl_image_tag @covers.cover_photo, height: 300, width: 400, crop: :fill %>
-        </div>
+        <div class="col-md-12  form-area">
+        <h4>Cover Texts:</h4>
+        <p>Size and style of texts match tose on the Front page.</p>
+        <h3><%= @covers.title %> </h3>
+        <h3><%= @covers.subtitle %></h3>
+        <h2><%= @covers.subtitle2 %></h2>
+
+        <%= link_to " Edit Cover", edit_cover_path(@covers) %>
+         </div>
+       </div>
 
       </div>
     </div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  open_from: 2016-11-24 10:08:25
+  open_to: 2016-11-24 10:08:25
+  title: MyString
+  subtitle: MyString
+
+two:
+  open_from: 2016-11-24 10:08:25
+  open_to: 2016-11-24 10:08:25
+  title: MyString
+  subtitle: MyString

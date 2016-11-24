@@ -20,6 +20,7 @@ class EventsController < ApplicationController
     @curry = Curry.find(1)
     @menu_header = Menu.where(header: true).first
     @menu_special = Menu.where(special: true).first
+    @opening_hours = OpeningHour.all
   end
 
    def admin

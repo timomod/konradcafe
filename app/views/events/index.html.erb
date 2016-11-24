@@ -3,11 +3,11 @@
 
 
   <!-- Cover Images Start => Incl. <Section> tag! -->
-  <!-- Checks if any event covers exist -->
-  <% if @event_cover == nil %>
-     <%= render "events/sections/cover_image2" %>
-     <% else %>
+  <!-- Checks if any event covers exist and if it has been set to Publish  -->
+  <% if @event_cover != nil %>
      <%= render "events/sections/cover_image1" %>
+     <% else %>
+     <%= render "events/sections/cover_image2" %>
     <% end %>
   <!-- Cover Images End -->
 

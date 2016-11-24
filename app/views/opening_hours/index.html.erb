@@ -1,0 +1,36 @@
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+
+
+
+      <div class="col-xs-10 col-md-offset-1 form-area">
+          <h3>Opening Hours</h3>
+
+          <!-- ******* Published Events ******* -->
+
+          <!-- Column 1 -->
+          <div class="col-md-6 ">
+            <div class="col-xs-12 line-text-top">
+
+              <hr>
+              <% @opening_hours.each do |item| %>
+                  <div class="dotted-underlinez">
+                    <h4><%= item.title %></h4>
+                    <p><%=  item.subtitle %></p>
+                    <p><%=  item.open_at %> - <%=  item.open_until %></p>
+                    <%= link_to "Edit Opening Hours for #{item.title}", edit_opening_hour_path(item) %>
+                  </div>
+                <% end %>
+
+            </div>
+          </div>
+          <!-- Coulm 1 End -->
+
+        </div>
+
+    </div>
+  </div>
+</section>

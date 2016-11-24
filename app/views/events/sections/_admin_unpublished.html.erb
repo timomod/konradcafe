@@ -1,0 +1,89 @@
+ <div class="circle circle-red col-xs-2">NOPE</div>
+                  <div class="col-xs-10"><h3>NON-Published Events</h3></div>
+                  <div class="col-xs-12">
+                  <% @events.each do |event| %>
+                    <% if event.publish == "Not Published" %>
+                      <hr>
+
+                      <!-- Status indicators -->
+                      <div class="col-md-12 row">
+                        <div class="col-md-2 table-box-gray">
+                          Position: <%= event.position %>
+                        </div>
+                        <div class="col-md-2 table-box-gray">
+                          Is Cover?: <%= event.cover %>
+                        </div>
+                        <% if event.cover == true %>
+                          <div class="col-md-6 table-box-gray">
+                            Cover Dates: <%= event.start_display.try(:strftime,'%a, %d %b %y') %>  -  <%= event.end_display.try(:strftime,'%a, %d %b %y') %>
+                          </div>
+                        <% end %>
+                      </div>
+
+
+
+                      <!-- Events Card start -->
+                      <div class="bubble col-md-12 ">
+
+                        <!-- Display Today Ribbon if event is today-->
+                        <% if event_today?(event) %>
+                           <div class="corner-ribbon top-right">Tonight</div>
+                           <div class="hide-corner-top"></div>
+                           <div class="hide-corner-right"></div>
+                        <% end %>
+                        <!-- Card content start -->
+                        <div class="col-md-7">
+                          <h3><i class="<%= event_icon_helper(event.event_icon) %>"aria-hidden='true'></i>
+                            <%= event.title %></h3>
+                          <h4><%= event.start_date.try(:strftime,'%A, %d %b %Y') %>, <%= event.start %>-<%= event.end %></h4>
+                          <p> <strong><%= event.subtitle %></strong></p>
+                          <div class="text">
+                            <p><%= simple_format(event.body.html_safe) %></p>
+                          </div>
+                        </div>
+                        <!-- Event Image -->
+                        <div class="col-md-5 ">
+                          <!-- image_tag "p9.jpg", {class: "img-responsive"} -->
+                          <%= cl_image_tag event.photo,  {class: "img-responsive"}  %>
+                        </div>
+
+
+                        <!-- Add DATE to CAlendar -->
+
+                        <div class="col-md-7">
+                          <div title="Add to Calendar" class="addeventatc">
+                            Add to Calendar
+                            <span class="start"><%= event.start_date.try(:strftime,'%d/%m/%Y') %> <%= event.start %></span>
+                            <span class="end"><%= event.end_date.try(:strftime,'%d/%m/%Y') %>  <%= event.end %></span>
+                            <span class="timezone">Europe/Luxembourg</span>
+                            <span class="title"><%= event.title %></span>
+                            <span class="description"><%= event.subtitle %></span>
+                            <span class="location"><%= event.address_one %></span>
+                            <span class="date_format">DD/MM/YYYY</span>
+                          </div>
+                        </div>
+
+
+                        <!-- Ribbon "Rectangle" with day and month -->
+                        <div class="rectangle">
+                          <!-- Code below uses "squar_month()" helper -->
+                          <p><%= event.start_date.try(:strftime,'%d') %>
+                            <br><%= event.start_date.try(:strftime,'%b').to_s.upcase %></p>
+                        </div>
+                        <!-- Ribbon shaded "triangle" -->
+                        <div class="triangle-l"></div>
+                      </div>
+                      <!-- Events Card End -->
+
+
+
+
+                      <br>
+                      <i class="icon-md ion-ios-eye"></i>
+
+
+                      <h4><%= link_to " Edit Event", edit_event_path(event) %> |
+                      <%= link_to " Delete Event", event_path(event), method: :delete, data: {confirm: "Are you sure you want to delete?"} %></h4>
+                    <% end %>
+                  <% end %>
+                </div>

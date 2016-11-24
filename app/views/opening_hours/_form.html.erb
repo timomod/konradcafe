@@ -1,0 +1,15 @@
+<%= simple_form_for(@opening_hour) do |f| %>
+            <%= f.error_notification %>
+            <!-- Main content -->
+            <div class="col-md-12  form-area">
+              <%= f.input :title, label: "Weekday", collection: [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %>
+              <%= f.input :subtitle, label: "Exceptions" %>
+              <%= f.input :open_at, collection: 1..24 %>
+              <%= f.input :open_until, collection: 1..24 %>
+
+            </div>
+            <!-- Button -->
+            <div class="col-md-12 row ">
+              <%= f.button :submit, "Update" %>
+            </div>
+            <% end %>

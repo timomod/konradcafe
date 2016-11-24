@@ -1,6 +1,12 @@
 <section class="section">
   <div class="container">
     <div class="row">
+      <div class="col-xs-10 col-md-offset-1 centered">
+        <h2><%= @menu_header.title %></h2>
+        <h4><%= @menu_header.subtitle %></h4>
+         <%= link_to "Edit Headers", edit_menu_path(@menu_header) %>
+      </div>
+
 
       <div class="col-xs-10 col-md-offset-1 form-area">
           <h3>Eat and Drink Menu</h3>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118232134) do
+ActiveRecord::Schema.define(version: 20161124094819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20161118232134) do
     t.date     "start_display"
     t.date     "end_display"
     t.date     "start_date"
+    t.time     "opening_hour"
   end
 
   add_index "events", ["cover"], name: "index_events_on_cover", using: :btree
@@ -107,6 +108,17 @@ ActiveRecord::Schema.define(version: 20161118232134) do
     t.boolean  "header",     default: false, null: false
     t.boolean  "special",    default: false, null: false
     t.boolean  "publish",    default: false, null: false
+  end
+
+  create_table "opening_hours", force: :cascade do |t|
+    t.time     "open_from"
+    t.time     "open_to"
+    t.string   "title"
+    t.string   "subtitle"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "open_at"
+    t.integer  "open_until"
   end
 
   create_table "users", force: :cascade do |t|

@@ -23,8 +23,24 @@ module EventsHelper
 
   # Checks current time to see if Konrads is open
   def opening_times
-      #Weekdays   Sun-0   Mon-1    Tues-2    Wed-3  Thu-4   Fri-5   Sat-6
-      schedule = [[11,24],[11,24],[11,24],[11,24],[11,24],[11,01],[10,01]]
+      mon1 = @opening_hours.find(1).open_at
+      mon2 = @opening_hours.find(1).open_until
+      tue1 = @opening_hours.find(2).open_at
+      tue2 = @opening_hours.find(2).open_until
+      wed1 = @opening_hours.find(3).open_at
+      wed2 = @opening_hours.find(3).open_until
+      thu1 = @opening_hours.find(4).open_at
+      thu2 = @opening_hours.find(4).open_until
+      fri1 = @opening_hours.find(5).open_at
+      fri2 = @opening_hours.find(5).open_until
+      sat1 = @opening_hours.find(6).open_at
+      sat2 = @opening_hours.find(6).open_until
+      sun1 = @opening_hours.find(7).open_at
+      sun2 = @opening_hours.find(7).open_until
+
+
+      #Weekdays   Sun-0       Mon-1       Tues-2      Wed-3       Thu-4       Fri-5       Sat-6
+      schedule = [[sun1,sun2],[mon1,mon2],[tue1,tue2],[wed1,wed2],[thu1,thu2],[fri1,fri2],[sat1,sat2]]
       # Weekday number Sun - Sat => 0 - 6
       day_num = Date.today.strftime("%w").to_i
       # The current hour. Ex.: 17:43 => 17

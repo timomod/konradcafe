@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
 
 
+
  as :user do
    get 'registrations/:id/edit' => 'registrations#edit', :as => :edit_user_profile
  end
@@ -58,6 +59,8 @@ Rails.application.routes.draw do
   resources :admin
 
   resources :menus
+
+  resources :opening_hours
 
 
 
