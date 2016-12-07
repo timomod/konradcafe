@@ -10,7 +10,7 @@
           </div>
 
           <!--  Column 1 Start -->
-          <div class="col-md-6">
+          <div class="col-md-6 hidden-xs">
             <!-- Section 1-->
             <div class="col-md-12 line-text-top">
               <% @eats.each do |item| %>
@@ -35,7 +35,7 @@
             <div class="col-md-12 line-text-top">
               <% @eats.each do |item| %>
                 <% if item.position >= 6  %>
-                <div class="dotted-underlinez">
+                <div class="dotted-underlinez hidden-xs">
                   <h4>
                     <i class="<%= menu_icon_helper(item.menu_icon) %>"aria-hidden='true'></i>
                     <%= item.title %>
@@ -54,7 +54,7 @@
 
           <!-- Colum 2 End -->
 
-          <div class="container">
+          <div class="container hidden-xs hidden-sm">
             <div class="col-md-12 line-text-bottom "></div>
           </div>
 
