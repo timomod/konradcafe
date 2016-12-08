@@ -1,36 +1,40 @@
-    <section id="opening-hours" class="section line-bottom line-top opening-hours">
+  <div class="col-md-6">
+    <h4><i class="fa fa-clock-o"></i> Opening Hours:</h4>
 
-      <div class="container">
+      <div class="col-xs-2 row">
+        <ul class="nodeco-list">
+          <li>Mon: </li>
+          <li>Tue: </li>
+          <li>Wed: </li>
+          <li>Thu: </li>
+        </ul>
+      </div>
 
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2 centered">
-            <h4><i class="fa fa-clock-o"></i> Our opening hours</h4>
-          </div>
-        </div>
-          <div class="row">
-            <div class="col-md-7th  centered">
-              <p>Mon: 11:00 - 24:00 </p>
-            </div>
-            <div class="col-md-7th  centered">
-              <p>Tues: 11:00 - 24:00 </p>
-            </div>
-            <div class="col-md-7th  centered ">
-              <p>Wed: 11:00 - 24:00 </p>
-            </div>
-            <div class="col-md-7th  centered ">
-              <p>Thur: 11:00 - 14:00 </p>
-            </div>
-            <div class="col-md-7th  centered ">
-              <p>Fri: 11:00 - 01:00 </p>
-            </div>
-            <div class="col-md-7th  centered ">
-              <p>Sat: 10:00 - 01:00 </p>
-            </div>
-            <div class="col-md-7th  centered ">
-              <p>Sun: 11:00 - 24:00 </p>
-            </div>
-          </div>
+      <div class="col-xs-4 ">
+        <ul class="nodeco-list">
+          <li><%='%.02f' % @opening_hours.find(1).open_at %> - <%='%.02f' % @opening_hours.find(1).open_until %></li>
+          <li><%='%.02f' % @opening_hours.find(2).open_at %> - <%='%.02f' % @opening_hours.find(2).open_until %></li>
+          <li><%='%.02f' % @opening_hours.find(3).open_at %> - <%='%.02f' % @opening_hours.find(3).open_until %></li>
+          <li><%='%.02f' % @opening_hours.find(4).open_at %> - <%='%.02f' % @opening_hours.find(4).open_until %></li>
+       </ul>
+      </div>
 
-        </div>
+      <div class="col-xs-2 row">
+        <ul class="nodeco-list">
+          <li>Fri: </li>
+          <li>Sat: </li>
+          <li>Sun: </li>
+        </ul>
+      </div>
 
-    </section>
+
+      <div class="col-xs-4 ">
+        <ul class="nodeco-list">
+          <li><%='%.02f' % @opening_hours.find(5).open_at %> - <%='%.02f' % @opening_hours.find(5).open_until %></li>
+          <li><%='%.02f' % @opening_hours.find(6).open_at %> - <%='%.02f' % @opening_hours.find(6).open_until %></li>
+          <li><%='%.02f' % @opening_hours.find(7).open_at %> - <%='%.02f' % @opening_hours.find(7).open_until %></li>
+       </ul>
+      </div>
+
+
+  </div>

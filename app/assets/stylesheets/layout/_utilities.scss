@@ -75,6 +75,10 @@
 @media (max-width: 768px) {
   .bg-shade-medium{
     background: $bg-shade-medium;
+    padding: 20px 10px 6px 10px !important;
+  }
+  .open > h3 {
+    font-size: 1.3em;
   }
 }
 
