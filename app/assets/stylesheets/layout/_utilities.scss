@@ -19,6 +19,8 @@
   background: #fff;
 }
 
+
+
 .bg-grey {
   background: #aeaeae;
 }
@@ -34,7 +36,9 @@
   background: #3b5998;
 }
 
-
+.align-left {
+  text-align: left;
+}
 
 .centered {
   text-align: center;
@@ -66,4 +70,16 @@
 
 .dotted-underline p  {
   border-bottom: dashed 1px #ddd;
+}
+
+@media (max-width: 768px) {
+  .bg-shade-medium{
+    background: $bg-shade-medium;
+  }
+}
+
+@media (max-width: 992px) {
+  .event-img-xs{
+    padding: 20px 0 30px 0;
+  }
 }

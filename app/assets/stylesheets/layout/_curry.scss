@@ -26,8 +26,8 @@
 }
 
 .curry-bg {
-   background: #F5F5F5 url(lotus.png) no-repeat center center;
-   background-size: 80%;
+   background: #F5F5F5 image-url("lotus.png") no-repeat center center;
+   background-size: 50%;
    background-attachment: fixed;
 
 }
@@ -46,6 +46,14 @@
       margin: auto;
 
     }
+
+  .curry-bg {
+
+     background-size: 90%;
+
+   }
+
+
   }
 
 

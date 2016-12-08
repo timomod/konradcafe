@@ -16,7 +16,7 @@
              <% if event.publish == "Published"%>
 
              <!-- Events Card start -->
-              <div class="bubble col-md-12 ">
+              <div class="bubble col-md-12 align-left">
 
                 <!-- Display Today Ribbon if event is today-->
                 <% if event_today?(event) %>
@@ -35,9 +35,9 @@
                   </div>
                 </div>
                 <!-- Event Image -->
-                <div class="col-md-5 ">
+                <div class="col-md-5">
                   <!-- image_tag "p9.jpg", {class: "img-responsive"} -->
-                  <%= cl_image_tag event.photo,  {class: "img-responsive"}  %>
+                  <%= cl_image_tag event.photo,  {class: "img-responsive event-img-xs"}  %>
                 </div>
 
 

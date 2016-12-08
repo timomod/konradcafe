@@ -681,6 +681,10 @@ h3 > .fa {
       margin: 0 20px 0 20px;
     }
 
+    .icon-bar {
+      background: $red !important;
+    }
+
 }
 
 
@@ -932,6 +936,10 @@ h3 > .fa {
 
 .navbar-color {
   background: #fff;
+}
+.custom-collapse .navbar-nav > li > a {
+  color: $red;
+  font-weight: 600;
 }
 
 

@@ -14,7 +14,12 @@ position: relative;
 border-radius: 4px;
 }
 
-
+@media (max-width: 768px) {
+  .bubble {
+      margin: 50px auto;
+      padding: 75px 30px 30px 60px;
+    }
+}
 
 .rectangle {
 background: #EE5F5B;
