@@ -595,6 +595,13 @@ h3 > .fa {
     background-size: cover !important;
 }
 
+@media (max-width : 768px) {
+    .cl-image-bg {
+
+      background-attachment: scroll;
+    }
+}
+
 
 
  .top-bg{
