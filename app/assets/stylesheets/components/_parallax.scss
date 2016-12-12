@@ -18,9 +18,25 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
     padding: 120px 0;
     text-align: center;
 }
+
+
+@media (max-width : 768px) {
+    .parallax01 {
+
+    background: image-url("bg4.jpg") no-repeat;
+
+    background-size: 640px 426px;
+    -moz-background-size: 640px 426px;
+    -webkit-background-size: 640px 426px;
+    }
+}
+
+
 
 .parallax01 h1, .parallax01 h2, .parallax01 h3, .parallax01 h4, .parallax01 p {
   color: #fff;
