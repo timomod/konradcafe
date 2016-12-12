@@ -593,6 +593,7 @@ h3 > .fa {
     -webkit-background-size: cover !important;
     -moz-background-size: cover !important;
     background-size: cover !important;
+    background-attachment: fixed;
 }
 
 @media (max-width : 768px) {
