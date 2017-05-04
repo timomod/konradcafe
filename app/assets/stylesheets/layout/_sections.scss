@@ -38,6 +38,23 @@
  background: $bg-shade-medium;
 }
 
+// DSM Facebook events link - fix hidden events when wide format.
+.dsm-fb-event {
+    width: 100% !important;
+}
+
+.dsm-fb-event-initial-details-section {
+    float: right;
+    width: 56%;
+    padding: 20px 50px !important;
+    text-align: left;
+}
+
+.event-single-item .event-btn {
+    padding: 6px 6px !important;
+    font-size: 15px !important;
+    }
+
 
 
 
