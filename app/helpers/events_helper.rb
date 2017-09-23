@@ -50,7 +50,7 @@ module EventsHelper
       todays_schedule = schedule[day_num]
       yesterdays_schedule = schedule[day_num - 1]
 
-      # Check if its after (more than) 5AM right_now && it the shop is open (up until midnight)
+      # Check if its after (more than) 5AM right_now && if the shop is open (up until midnight)
       if time_now > 5 && (time_now >= todays_schedule[0] && time_now < 24)
         # FYI - '%.2f' transfroms a number into a 2 decimal float
           "Open now: #{'%.2f' % todays_schedule[0]} - #{'%.2f' % todays_schedule[1]}"
